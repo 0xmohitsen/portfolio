@@ -6,7 +6,6 @@ import Lottie from "react-lottie";
 
 import { cn } from "@/lib/utils";
 
-
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
@@ -52,8 +51,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["NodeJS", "NextJS", "Typescript"];
+  const rightLists = ["PostgreSQL", "Linux", "AWS"];
 
   const [copied, setCopied] = useState(false);
 
@@ -67,7 +66,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "mohitsen0102@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -89,7 +88,7 @@ export const BentoGridItem = ({
     >
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
+        <div className="absolute h-full w-full">
           {img && (
             <img
               src={img}
@@ -99,22 +98,23 @@ export const BentoGridItem = ({
           )}
         </div>
         <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
+          className={`absolute right-0 -bottom-5 ${
+            id === 5 && "w-full opacity-80"
+          } `}
         >
           {spareImg && (
             <img
               src={spareImg}
               alt={spareImg}
               //   width={220}
-              className="object-cover object-center w-full h-full"
+              className="h-full w-full object-cover object-center"
             />
           )}
         </div>
         {id === 6 && (
           // add background animation , remove the p tag
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
+            <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center px-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-7xl"></div>
           </BackgroundGradientAnimation>
         )}
 
@@ -125,13 +125,13 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="z-10 font-sans text-sm font-extralight text-[#C1C2D3] md:max-w-32 md:text-xs lg:text-base">
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={`z-10 max-w-96 font-sans text-lg font-bold lg:text-3xl`}
           >
             {title}
           </div>
@@ -141,27 +141,25 @@ export const BentoGridItem = ({
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
               {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className="rounded-lg bg-[#10132E] px-3 py-4 text-center lg:px-3 lg:py-4"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className="rounded-lg bg-[#10132E] px-3 py-4 text-center lg:px-3 lg:py-4"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>
@@ -170,14 +168,15 @@ export const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className="mt-5 relative">
+            <div className="relative mt-5">
               {/* button border magic from tailwind css buttons  */}
               {/* add rounded-md h-8 md:h-8, remove rounded-full */}
               {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
               {/* add handleCopy() for the copy the text */}
               <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
                 <Lottie options={defaultOptions} height={200} width={400} />

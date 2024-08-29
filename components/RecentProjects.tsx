@@ -4,44 +4,44 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import Image from "next/image";
+import Link from "next/link";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20">
+    <div className="py-20" id="projects">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="mt-10 flex flex-wrap items-center justify-center gap-16 p-4">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="flex h-[25rem] w-[80vw] items-center justify-center sm:w-96 lg:min-h-[32.5rem]"
             key={item.id}
           >
-            <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
-            >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+            <PinContainer title={item.title} href={item.link}>
+              <div className="relative mb-10 flex h-[20vh] w-[80vw] items-center justify-center overflow-hidden sm:w-96 lg:h-[30vh]">
                 <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
+                  className="relative h-full w-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
                   <img src="/bg.png" alt="bgimg" />
                 </div>
-                <img
+                <Image
                   src={item.img}
                   alt="cover"
-                  className="z-10 absolute bottom-0"
+                  className="absolute bottom-0 z-10 object-cover lg:rounded-3xl"
+                  fill={true}
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">
                 {item.title}
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="line-clamp-2 text-sm font-light lg:text-xl lg:font-normal"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -50,12 +50,12 @@ const RecentProjects = () => {
                 {item.des}
               </p>
 
-              <div className="flex items-center justify-between mt-7 mb-3">
+              <div className="mb-3 mt-7 flex items-center justify-between">
                 <div className="flex items-center">
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[.2] bg-black lg:h-10 lg:w-10"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
@@ -65,11 +65,15 @@ const RecentProjects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                <div className="flex items-center justify-center text-[#CBACF9] transition-colors duration-200 hover:text-white">
+                  <Link
+                    href={item.link}
+                    className="flex text-sm text-purple transition-colors duration-200 hover:text-white md:text-xs lg:text-xl"
+                    target="_blank"
+                  >
                     Check Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  </Link>
+                  <FaLocationArrow className="ms-3" />
                 </div>
               </div>
             </PinContainer>

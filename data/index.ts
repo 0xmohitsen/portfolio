@@ -109,7 +109,7 @@ export const projects = [
   {
     id: 4,
     title: "PokeDex Pokemon Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    des: "Pokedex Pokemon is a React-Vite app that provides information about various Pokemon species. It allows users to browse through a list of Pokemon, search for specific Pokemon, view details of individual Pokemon, and see similar Pokemon listings.",
     img: "/pokedex.png",
     iconLists: ["/re.svg", "/tail.svg"],
     link: "https://pokedex-pokemon-001.netlify.app/",

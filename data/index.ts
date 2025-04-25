@@ -99,6 +99,20 @@ export const projects = [
     link: "https://www.freeproductcompany.org/",
   },
   {
+    id: 2,
+    title: "Learning Management System",
+    des: "It is a full-stack project designed to provide a comprehensive platform for managing courses and user profiles.",
+    img: "/lms.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/postgres.svg",
+      "/prisma.svg",
+    ],
+    link: "https://lms-frontend-01.onrender.com/",
+  },
+  {
     id: 3,
     title: "Wanderlust - Ultimate Travel Blog 🧳✈️",
     des: "WanderLust is a MERN travel blog website 🚀.",
@@ -108,6 +122,14 @@ export const projects = [
   },
   {
     id: 4,
+    title: "CanvasCraft",
+    des: "Canvas-Craft is a platform designed for engineering teams to create and manage documentation and diagrams. 🚀.",
+    img: "/canvascraft.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+    link: "https://canvas-craft-01.vercel.app/",
+  },
+  {
+    id: 5,
     title: "PokeDex Pokemon Website",
     des: "Pokedex Pokemon is a React-Vite app that provides information about various Pokemon species. It allows users to browse through a list of Pokemon, search for specific Pokemon, view details of individual Pokemon, and see similar Pokemon listings.",
     img: "/pokedex.png",
